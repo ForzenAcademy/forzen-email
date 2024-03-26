@@ -20,16 +20,14 @@ export class Mailer {
         if (fs.existsSync(configFile)) {
           const configFileContents: string = fs.readFileSync(configFile, 'utf8');
           const config: MailProperties = JSON.parse(configFileContents);
-          return config;
+          Mailer.properties = config;
         } else {
           console.log(
             'forzen-email: Properties not found! Please provide mailer.json in your project directory.',
           );
-          return null;
         }
       } catch (error) {
         console.error('forzen-email: An error occurred while reading your configuration', error);
-        return null;
       }
     }
   }
@@ -77,5 +75,14 @@ export class Mailer {
       console.error(`forzen-email: Error when sending an email to ${recipients}:\n`, error);
     }
     return false;
+  }
+
+  /**
+   * Manually override the email properties
+   *
+   * @param mailProperties The email properties to set for the Mailer
+   */
+  static setMailProperties(mailProperties: MailProperties) {
+    Mailer.properties = mailProperties;
   }
 }

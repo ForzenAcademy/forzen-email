@@ -10,9 +10,9 @@ Here is a template to follow for what to put inside this file. Fill this out wit
 
 ```
 {
-	senderAddress: 'ADDRESS';
-	mailService: 'MAIL SERVICE';
-	password: 'PASSWORD';
+	"senderAddress": "ADDRESS",
+	"mailService": "MAIL SERVICE",
+	"password": "PASSWORD"
 }
 ```
 

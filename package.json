@@ -1,10 +1,11 @@
 {
   "name": "forzen-email",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A simple Node email library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "testInbox": "tsc && node dist/examples/testEmail.js",
     "pretty": "prettier --write .",
     "pretty-check": "prettier --check .",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
@@ -13,6 +14,8 @@
   "author": "Forzen Academy",
   "license": "ISC",
   "devDependencies": {
+    "@types/imap": "^0.8.40",
+    "@types/mailparser": "^3.4.4",
     "@types/node": "^20.11.25",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
@@ -26,6 +29,8 @@
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.14",
+    "imap": "^0.8.19",
+    "mailparser": "^3.6.9",
     "nodemailer": "^6.9.7"
   }
 }
